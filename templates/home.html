@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}home.html{% endblock %}
+
+<!-- {% block extra-style %}{% endblock %} -->
+<!-- INTRO
+================================================== -->
+{% block home %}
+<!-- <section id="home" style="padding:160px 0;background-image: url(https://unsplash.it/1324/683?random=0); background-position: center; background-repeat: no-repeat;background-size: cover;background-attachment:fixed;"> -->
+<section id="home" style="padding:160px 0;background-image: url('../static/assets/img/eagle.jpg'); background-position: center;background-size: cover;background-attachment:fixed;">
+	<div class="container">
+		<div class="textwidget">
+			<h1 class="toptitle">ASSIGNMENT SCHEDULER for <br/> DIGITAL ANALYTICS STUDENTS <br/><br/><i class="fa fa-star roundicon"></i>
+			</h1>
+			<div class="contactstyle topform">
+
+				<ul class="navbar-nav ml-5 mr-5">
+
+						<li class="nav-item dropdown mx-1 btn btn-primary">
+								{% if user.is_active %}
+								<a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+									<i class="fas fa-user"></i>&emsp;★ {% firstof user.get_short_name user.get_username %}님, 환영합니다. ★&emsp;</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+									<a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+								</div>
+								{% else %}
+								<a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+									<i class="fas fa-user"></i>&ensp;DA 학생은 여기서 로그인 해주세요.&ensp;</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="{% url 'login' %}">Login</a>
+									<a class="dropdown-item" href="{% url 'register' %}">Register</a>
+								</div>
+								{% endif %}
+						</li>
+				</ul>
+
+			</div>
+
+
+		</div>
+
+		</div>
+</section>
+<!-- ABOUT
+================================================== -->
+<section id="about" class="blacktext" style="padding:60px;background-color:#d6e4f0;" >
+
+	<div class="container">
+		<div class="so-widget-sow-headline">
+			<div class="sow-headline">
+				<h1 class="blacktext">연세대학교 디지털애널리틱스 융합전공 대학원</h1>
+			</div>
+		</div>
+		<br/>
+		<div class="w960 text-center">
+		<p>
+			연세대학교는 다양한 분야의 빅데이터 분석과 처리 능력을 갖춘 융합형 데이터 사이언티스트로서의 새로운 인재를 양성하고자 연세대학교 최초로 일반대학원 소속 융합실용학과인 '디지털애널리틱스 융합협동 석사과정'을 개설하였습니다.
+		</p>
+		<p>
+			우리 대학원은 다학제적인 융합 데이터사이언스 교육을 위해 인문, 사회, 이공학, 의학 등 다양한 전공의 교수진이 모여 전문지식을 전수하고 있습니다. 이에 따른 교육과정 역시 기초적인 프로그래밍과 데이터베이스 뿐만 아니라, 머신러닝, 인공지능, 데이터마이닝, 텍스트마이닝, 자연어처리, 의료정보학 등 다양한 강의를 제공하고 있습니다. 또한 이론 교육에 이어 실습과정과 산업연계 프로젝트의 기회를 제공하여 학생들이 실무에 적응할 수 있도록 돕고 있습니다.
+		</p>
+		<p>
+			우리 대학원은 융합전공에 걸맞게 다양한 학부 전공의 학생들이 모여 각자의 장점을 살리며 교내외적으로 우수한 성과를 내고 있습니다. 데이터 사이언스를 통해 스스로의 분야에서 문제를 해결하고자 하는 모든 분들을 진심으로 환영합니다.
+		</div>
+	</div>
+
+</section>
+{% endblock home %}
+
+{% block footer %}
+
+ {% endblock %}
+
+
+
+</body>
+</html>

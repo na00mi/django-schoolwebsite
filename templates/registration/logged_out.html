@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}logged_out.html{% endblock %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <h2>로그아웃 하시겠습니까?</h2>
+    <br>
+
+    <div>
+        <i class="fas fa-quote-left"></i>
+        <span class="h6">&emsp;수고하셨습니다</span>
+        <i class="fas fa-quote-right"></i>
+    </div>
+
+    <br>
+
+
+    <h3 class="font-italic" style='color:#003566'><a href="{% url 'home' %}">&nbsp;▶LogOut◀</a>
+
+{% endblock %}
